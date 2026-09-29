@@ -83,14 +83,14 @@ jump_sheet = load_image(JUMP_SHEET)
 attack_sheet = load_image(ATTACK_SHEET)
 
 actions = (
-    (run_sheet, RUN_FRAMES),
-    (guard_sheet, GUARD_FRAMES),
-    (jump_sheet, JUMP_FRAMES),
-    (attack_sheet, ATTACK_FRAMES),
+    ('RUN', run_sheet, RUN_FRAMES),
+    ('GUARD', guard_sheet, GUARD_FRAMES),
+    ('JUMP', jump_sheet, JUMP_FRAMES),
+    ('ATTACK', attack_sheet, ATTACK_FRAMES),
 )
 
 while True:
-    sheet, frames = actions[action_index]
+    name, sheet, frames = actions[action_index]
     left, bottom, width, height = frames[frame_index]
     clear_canvas()
     grass.draw(CANVAS_WIDTH // 2, 30)
