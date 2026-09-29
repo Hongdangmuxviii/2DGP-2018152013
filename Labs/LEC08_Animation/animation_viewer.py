@@ -42,7 +42,8 @@ GUARD_FRAMES = (
     (724, 0, 362, 362),
     (1086, 0, 362, 362),
 )
-run_frame = 0
+action_index = 0
+frame_index = 0
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -50,13 +51,22 @@ grass = load_image(asset_path('grass.png'))
 run_sheet = load_image(RUN_SHEET)
 guard_sheet = load_image(GUARD_SHEET)
 
+actions = (
+    (run_sheet, RUN_FRAMES),
+    (guard_sheet, GUARD_FRAMES),
+)
+
 while True:
-    left, bottom, width, height = RUN_FRAMES[run_frame]
+    sheet, frames = actions[action_index]
+    left, bottom, width, height = frames[frame_index]
     clear_canvas()
     grass.draw(CANVAS_WIDTH // 2, 30)
-    run_sheet.clip_draw(left, bottom, width, height, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, 360, 360)
+    sheet.clip_draw(left, bottom, width, height, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, 360, 360)
     update_canvas()
     delay(0.07)
-    run_frame = (run_frame + 1) % len(RUN_FRAMES)
+    frame_index += 1
+    if frame_index == len(frames):
+        frame_index = 0
+        action_index = (action_index + 1) % len(actions)
 
 close_canvas()
