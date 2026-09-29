@@ -17,6 +17,7 @@ RUN_SHEET = asset_path('assets/fox_swordswoman_run_12f.png')
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 grass = load_image(asset_path('grass.png'))
+run_sheet = load_image(RUN_SHEET)
 grass.draw(CANVAS_WIDTH // 2, 30)
 update_canvas()
 delay(1)
