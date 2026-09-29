@@ -94,7 +94,9 @@ while True:
     left, bottom, width, height = frames[frame_index]
     clear_canvas()
     grass.draw(CANVAS_WIDTH // 2, 30)
-    sheet.clip_draw(left, bottom, width, height, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, 360, 360)
+    draw_height = 360
+    draw_width = int(draw_height * width / height)
+    sheet.clip_draw(left, bottom, width, height, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, draw_width, draw_height)
     update_canvas()
     delay(0.07)
     frame_index += 1
