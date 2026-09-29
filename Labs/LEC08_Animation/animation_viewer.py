@@ -43,6 +43,18 @@ GUARD_FRAMES = (
     (724, 0, 362, 362),
     (1086, 0, 362, 362),
 )
+JUMP_FRAMES = (
+    (0, 397, 396, 396),
+    (396, 397, 397, 396),
+    (793, 397, 397, 396),
+    (1190, 397, 396, 396),
+    (1586, 397, 397, 396),
+    (0, 0, 396, 397),
+    (396, 0, 397, 397),
+    (793, 0, 397, 397),
+    (1190, 0, 396, 397),
+    (1586, 0, 397, 397),
+)
 action_index = 0
 frame_index = 0
 
@@ -56,6 +68,7 @@ jump_sheet = load_image(JUMP_SHEET)
 actions = (
     (run_sheet, RUN_FRAMES),
     (guard_sheet, GUARD_FRAMES),
+    (jump_sheet, JUMP_FRAMES),
 )
 
 while True:
