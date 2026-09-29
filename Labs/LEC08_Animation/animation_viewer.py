@@ -72,6 +72,7 @@ ATTACK_FRAMES = (
 )
 action_index = 0
 frame_index = 0
+action_repeat = 0
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -99,6 +100,9 @@ while True:
     frame_index += 1
     if frame_index == len(frames):
         frame_index = 0
-        action_index = (action_index + 1) % len(actions)
+        action_repeat += 1
+        if action_repeat == 5:
+            action_repeat = 0
+            action_index = (action_index + 1) % len(actions)
 
 close_canvas()
