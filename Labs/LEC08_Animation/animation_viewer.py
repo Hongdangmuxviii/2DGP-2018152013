@@ -15,6 +15,7 @@ def asset_path(relative_path):
 RUN_SHEET = asset_path('assets/fox_swordswoman_run_12f.png')
 GUARD_SHEET = asset_path('assets/fox_swordswoman_guard_12f.png')
 JUMP_SHEET = asset_path('assets/fox_swordswoman_jump_10f.png')
+ATTACK_SHEET = asset_path('assets/fox_swordswoman_attack_12f.png')
 RUN_FRAMES = (
     (0, 724, 362, 362),
     (362, 724, 362, 362),
@@ -64,6 +65,7 @@ grass = load_image(asset_path('grass.png'))
 run_sheet = load_image(RUN_SHEET)
 guard_sheet = load_image(GUARD_SHEET)
 jump_sheet = load_image(JUMP_SHEET)
+attack_sheet = load_image(ATTACK_SHEET)
 
 actions = (
     (run_sheet, RUN_FRAMES),
