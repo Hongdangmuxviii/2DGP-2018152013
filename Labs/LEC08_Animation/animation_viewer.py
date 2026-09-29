@@ -12,6 +12,9 @@ def asset_path(relative_path):
     return str(BASE_DIR / relative_path)
 
 
+RUN_SHEET = asset_path('assets/fox_swordswoman_run_12f.png')
+
+
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 grass = load_image(asset_path('grass.png'))
 grass.draw(CANVAS_WIDTH // 2, 30)
