@@ -5,6 +5,8 @@ from pico2d import *
 
 CANVAS_WIDTH = 800
 CANVAS_HEIGHT = 600
+FRAME_DELAY = 0.07
+REPEAT_PER_ACTION = 5
 BASE_DIR = Path(__file__).resolve().parent
 
 
@@ -98,12 +100,12 @@ while True:
     draw_width = int(draw_height * width / height)
     sheet.clip_draw(left, bottom, width, height, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, draw_width, draw_height)
     update_canvas()
-    delay(0.07)
+    delay(FRAME_DELAY)
     frame_index += 1
     if frame_index == len(frames):
         frame_index = 0
         action_repeat += 1
-        if action_repeat == 5:
+        if action_repeat == REPEAT_PER_ACTION:
             action_repeat = 0
             action_index = (action_index + 1) % len(actions)
 
