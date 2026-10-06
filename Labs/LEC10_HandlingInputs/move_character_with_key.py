@@ -33,6 +33,16 @@ def get_move_direction():
     return dx, dy
 
 
+def update_position():
+    global x, y, direction
+
+    dx, dy = get_move_direction()
+    if dx:
+        direction = dx
+    x += dx * MOVE_SPEED
+    y += dy * MOVE_SPEED
+
+
 running = True
 keys = {
     SDLK_LEFT: False,
