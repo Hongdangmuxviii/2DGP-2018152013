@@ -24,6 +24,12 @@ def handle_events():
 
 
 running = True
+keys = {
+    SDLK_LEFT: False,
+    SDLK_RIGHT: False,
+    SDLK_UP: False,
+    SDLK_DOWN: False,
+}
 frame = 0
 
 
