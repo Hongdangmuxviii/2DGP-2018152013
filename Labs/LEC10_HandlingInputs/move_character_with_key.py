@@ -23,6 +23,8 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN and event.key in keys:
             keys[event.key] = True
+        elif event.type == SDL_KEYUP and event.key in keys:
+            keys[event.key] = False
 
 
 running = True
