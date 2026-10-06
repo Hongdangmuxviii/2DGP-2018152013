@@ -58,4 +58,13 @@ direction = 1
 frame = 0
 
 
+while running:
+    clear_canvas()
+    background.clip_draw(240, 212, CANVAS_WIDTH, CANVAS_HEIGHT,
+                         CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2)
+    update_canvas()
+    handle_events()
+    delay(0.05)
+
+
 close_canvas()
