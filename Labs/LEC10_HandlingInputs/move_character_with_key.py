@@ -7,6 +7,7 @@ CANVAS_HEIGHT = 600
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 background = load_image('TUK_GROUND.png')
+character = load_image('animation_sheet.png')
 
 
 def handle_events():
