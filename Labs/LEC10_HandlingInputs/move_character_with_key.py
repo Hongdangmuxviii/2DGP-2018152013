@@ -7,6 +7,7 @@ FRAME_WIDTH = 100
 FRAME_HEIGHT = 100
 FRAME_COUNT = 8
 MOVE_SPEED = 5
+FRAME_DELAY = 0.05
 
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -70,11 +71,14 @@ frame = 0
 
 while running:
     clear_canvas()
+    handle_events()
+    update_position()
     background.clip_draw(240, 212, CANVAS_WIDTH, CANVAS_HEIGHT,
                          CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2)
+    draw_character()
     update_canvas()
-    handle_events()
-    delay(0.05)
+    frame = (frame + 1) % FRAME_COUNT
+    delay(FRAME_DELAY)
 
 
 close_canvas()
