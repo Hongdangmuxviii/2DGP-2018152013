@@ -41,6 +41,8 @@ def update_position():
         direction = dx
     x += dx * MOVE_SPEED
     y += dy * MOVE_SPEED
+    x = max(FRAME_WIDTH // 2, min(CANVAS_WIDTH - FRAME_WIDTH // 2, x))
+    y = max(FRAME_HEIGHT // 2, min(CANVAS_HEIGHT - FRAME_HEIGHT // 2, y))
 
 
 running = True
