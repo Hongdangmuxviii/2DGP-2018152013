@@ -27,6 +27,12 @@ def handle_events():
             keys[event.key] = False
 
 
+def get_move_direction():
+    dx = int(keys[SDLK_RIGHT]) - int(keys[SDLK_LEFT])
+    dy = int(keys[SDLK_UP]) - int(keys[SDLK_DOWN])
+    return dx, dy
+
+
 running = True
 keys = {
     SDLK_LEFT: False,
