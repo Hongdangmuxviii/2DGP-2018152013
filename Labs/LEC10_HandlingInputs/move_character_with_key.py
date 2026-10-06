@@ -45,6 +45,16 @@ def update_position():
     y = max(FRAME_HEIGHT // 2, min(CANVAS_HEIGHT - FRAME_HEIGHT // 2, y))
 
 
+def draw_character():
+    dx, dy = get_move_direction()
+    if dx or dy:
+        row = 100 if direction == 1 else 0
+    else:
+        row = 300 if direction == 1 else 200
+    character.clip_draw(frame * FRAME_WIDTH, row,
+                        FRAME_WIDTH, FRAME_HEIGHT, x, y)
+
+
 running = True
 keys = {
     SDLK_LEFT: False,
