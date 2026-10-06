@@ -34,6 +34,9 @@ keys = {
     SDLK_UP: False,
     SDLK_DOWN: False,
 }
+x = CANVAS_WIDTH // 2
+y = CANVAS_HEIGHT // 2
+direction = 1
 frame = 0
 
 
